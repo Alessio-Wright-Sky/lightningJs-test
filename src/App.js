@@ -117,79 +117,8 @@ export default class App extends Lightning.Component {
             { p: 'h', v: { 0.0: height, 0.5: height + 30 - distance * 5, 0.9: height, 0.95: 7 - distance * 4 } }
           ]
         }).start()
-
-
-      // if (Math.random() > 0.75) {
-      //   lngRects = []
-      //   lightning(400, 40, Math.floor(Math.random() * 350), 0, 3)
-      //   for (let lngRect of lngRects) {
-      //     console.log(lngRect)
-      //     let xDiff = lngRect.xEnd - lngRect.xStart
-      //     let yDiff = lngRect.yEnd - lngRect.yStart
-      //     this.tag('RainBox').add(
-      //       {
-      //         tag: 'lng' + i,
-
-      //         x: 80 + Math.floor(Math.random() * 350),
-      //         y: 20,
-      //         w: 5,
-      //         h: Math.sqrt(((xDiff) ** 2) + ((yDiff) ** 2)),
-      //         mountX: 0.5,
-
-      //         pivotY: 0,
-      //         pivotX: 0.5,
-      //         //rotation: (Math.PI / (Math.tanh(xDiff / yDiff))),
-
-      //         zIndex: 0,
-      //         rect: true,
-      //         color: 0xffffff00,
-      //       }
-      //     )
-      //   }
-      // }
       await new Promise(r => setTimeout(r, 10));
     }
 
-  }
-}
-
-var lngRects = []
-function lightning(yMax, yCur, xCur, depth, maxDepth) {
-  if (depth > maxDepth) {
-    return
-  }
-
-  let branch = Math.random() > 0.5 ? true : false
-  if (branch === true) {
-
-    let xEnd = Math.floor(Math.random() * 350)
-    let yEnd = yMax - ((yMax - yCur) / 2)
-    if (yEnd > yMax) {
-      yEnd = yMax
-    }
-
-    let lngObj = {
-      xStart: xCur,
-      xEnd: xEnd,
-      yStart: yCur,
-      yEnd: yEnd,
-      tag: "lng-" + (lngRects.length + 1)
-    }
-    lngRects.push(lngObj)
-
-    lightning(yMax, yEnd, xEnd, depth + 1, maxDepth)
-    lightning(yMax, yEnd, xEnd, depth + 1, maxDepth)
-
-  } else {
-    let xEnd = Math.floor(Math.random() * 350)
-    let yEnd = yMax
-    let lngObj = {
-      xStart: xCur,
-      xEnd: xEnd,
-      yStart: yCur,
-      yEnd: yEnd,
-      tag: "lng-" + (lngRects.length + 1)
-    }
-    lngRects.push(lngObj)
   }
 }
