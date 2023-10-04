@@ -1,0 +1,7 @@
+{
+  "name": "com.domain.app.testapp",
+  "description": "test_app",
+  "dependencies": {
+    "@lightningjs/sdk": "^5.4.1"
+  }
+}
